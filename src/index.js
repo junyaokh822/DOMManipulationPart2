@@ -51,7 +51,7 @@ subMenuEl.style.height = "100%";
 subMenuEl.style.backgroundColor = "var(--sub-menu-bg)";
 subMenuEl.classList.add("flex-around");
 
-//===========================Part 4 and 5 Adding Menu Interaction===================
+//==================Part 4 and 5 Adding Menu and sub Menu Interaction===============
 const topMenuLinks = topMenuEl.querySelectorAll("a");
 topMenuEl.addEventListener("click", function (e) {
   e.preventDefault(); //prevent refresh

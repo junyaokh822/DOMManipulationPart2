@@ -77,7 +77,7 @@ topMenuEl.addEventListener("click", function (e) {
       buildSubmenu(linkObject.subLinks);
     } else {
       subMenuEl.style.top = "0";
-      mainEl.innerHTML = `<h1>${clickedLinkText.toUpperCase()}</h1>`;
+      mainEl.innerHTML = `<h1>${capitalizeWords(clickedLinkText)}</h1>`;
     }
   }
 
@@ -111,5 +111,12 @@ subMenuEl.addEventListener("click", function (e) {
   topMenuLinks.forEach((link) => {
     link.classList.remove("active");
   });
-  mainEl.innerHTML = `<h1>${e.target.textContent.toUpperCase()}</h1>`;
+  mainEl.innerHTML = `<h1>${capitalizeWords(e.target.textContent)}</h1>`;
 });
+
+function capitalizeWords(str) {
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
